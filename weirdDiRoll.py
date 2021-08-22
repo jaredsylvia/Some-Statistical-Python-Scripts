@@ -33,10 +33,10 @@ def randomizeTotals(amount, minRoll, maxRoll): # A function that randomly genera
         result.append(random.randint(minRoll, maxRoll))
     return result
         
-def disPlotRolls(rolls):
+def disPlotRolls(rolls, dice, modifier):
     rolls.sort()
     fig = sns.displot(rolls, bins=(int(rolls[-1]) - int(rolls[0])))
-    plt.title("Distribution of rolls")
+    plt.title(",".join(dice) + '+' + str(modifier))
     plt.xlabel("Value of roll")
     plt.ylabel("Number of times rolled")
     plt.show()
@@ -66,14 +66,14 @@ def printPerRollStats(rolls):
           ' being rolled ' + str(highestFreq[1]) + ' times.')
 
 
-dice = ['3d6', '2d20', '3d100'] # Conventional tabletop format (3d6 = 3 six sided, 2d10 = 2 ten sided, 1d20 = 1 twenty sided, etc.,) in a list
+dice = ['3d6', '2d10', '1d20'] # Conventional tabletop format (3d6 = 3 six sided, 2d10 = 2 ten sided, 1d20 = 1 twenty sided, etc.,) in a list
 modifier = 0 #Positive or negative integer 0 if none
 numOfRolls = 100000 # The higher the more accurate, should be higher than variation of dice - could slow down computer with large numbers
 
 
 rolls = rollWeirdDi(dice, numOfRolls, modifier) # list of rolls matching parameters
 
-disPlotRolls(rolls) # Generage a graph of results
+disPlotRolls(rolls, dice, modifier) # Generage a graph of results
 
 printPerRollStats(rolls)# Per roll stats
 
