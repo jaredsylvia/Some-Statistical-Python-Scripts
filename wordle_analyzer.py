@@ -13,7 +13,8 @@ combinations = []
 fiveLetterWords = []
 lettersInWords = []
 letterPos = {'First': [], 'Second' : [], 'Third': [], 'Fourth': [], 'Fifth': []}
-def load_words():
+
+def load_words():                                             # https://github.com/dwyl/english-words
     with open('words_alpha.txt') as word_file:
         valid_words = set(word_file.read().split())
 
