@@ -80,7 +80,7 @@ if __name__ == '__main__':
     plt.clf()
     
     sns.set_theme(style="whitegrid")
-    sns.barplot(x = 'letter', y = 'count', data=olfDF).set_title('Frequency of letters apearing in 15,918 five letter words')
+    sns.barplot(x = 'letter', y = 'count', data=olfDF).set_title('Frequency of letters appearing in 15,918 five letter words')
     sns.set(rc = {'figure.figsize':(16,9)})
     plt.xlabel("Letter")
     plt.ylabel("Number of occurences")
@@ -97,7 +97,7 @@ if __name__ == '__main__':
     plt.clf()
     
     sns.set_theme(style="whitegrid")
-    sns.barplot(x = 'letter', y = 'count', data=tlfDF).set_title('Frequency of two letter combinations apearing in 15,918 five letter words')
+    sns.barplot(x = 'letter', y = 'count', data=tlfDF).set_title('Frequency of two letter combinations appearing in 15,918 five letter words')
     sns.set(rc = {'figure.figsize':(16,9)})
     plt.xlabel("Letter combination")
     plt.ylabel("Number of occurences")
